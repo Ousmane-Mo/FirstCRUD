@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create Article Form{% endblock %}
+
+{% block body %}
+    <body>
+        <div class="container ">
+            <div class="row text-center my-2">
+                <h3 class="my-4">Edit this article</h1>
+                <div class="col-md-6 offset-md-3">
+                    {{ form_start(Edform) }}
+                        <div class="form-group row">
+                            <label for="title" class="col-sm-2 col-form-label">{{ form_label(Edform.title) }}:</label>
+                            <div class="col-sm-10">
+                                {{ form_widget(Edform.title, {'attr': {'class':'form-control',} })}}
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="content" class="col-sm-2 col-form-label">{{ form_label(Edform.content) }}:</label>
+                            <div class="col-sm-10">
+                                {{ form_widget(Edform.content, {'attr':{'class':'form-control', 'rows':'5'}}) }}
+                            </div>
+                        </div>
+                        <div class="row justify-content-end mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    {{ form_end(Edform) }}
+                </div>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}
